@@ -30,7 +30,7 @@
 <meta property="og:description" content="Start with Keras https:&#x2F;&#x2F;keras.io&#x2F;zh&#x2F; 從這裡開始。 要在後端安裝tensor flow，Keras只是一個API。 https:&#x2F;&#x2F;www.tensorflow.org&#x2F;install&#x2F; pip install --upgrade pip: 先把pip升級到最新版。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-01T11:21:56.000Z">
-<meta property="article:modified_time" content="2020-12-01T11:44:14.600Z">
+<meta property="article:modified_time" content="2020-12-01T12:09:17.243Z">
 <meta property="article:author" content="Anne">
 <meta property="article:tag" content="研精覃思">
 <meta property="article:tag" content="Neural Network">
@@ -194,7 +194,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-12-01 19:21:56 / Modified: 19:44:14" itemprop="dateCreated datePublished" datetime="2020-12-01T19:21:56+08:00">2020-12-01</time>
+              <time title="Created: 2020-12-01 19:21:56 / Modified: 20:09:17" itemprop="dateCreated datePublished" datetime="2020-12-01T19:21:56+08:00">2020-12-01</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -229,10 +229,13 @@
 <p>在stake overflow上找到一個相似的問題，<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/62241930/error-exception-traceback-most-recent-call-last-tensorflow">https://stackoverflow.com/questions/62241930/error-exception-traceback-most-recent-call-last-tensorflow</a> 。在CSDN上找到一個更靠譜的回答： <a target="_blank" rel="noopener" href="https://blog.csdn.net/happy1223247773/article/details/105697268">https://blog.csdn.net/happy1223247773/article/details/105697268</a> 。決定把科學上網換全局模式再試一遍。再不行可能就考慮換清華的源。事實證明正常的下載速度大約是1M/S。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Successfully installed absl-py-0.11.0 astunparse-1.6.3 cachetools-4.1.1 gast-0.3.3 google-auth-1.23.0 google-auth-oauthlib-0.4.2 google-pasta-0.2.0 grpcio-1.33.2 keras-preprocessing-1.1.2 markdown-3.3.3 oauthlib-3.1.0 opt-einsum-3.3.0 protobuf-3.14.0 pyasn1-0.4.8 pyasn1-modules-0.2.8 requests-oauthlib-1.3.0 rsa-4.6 tensorboard-2.4.0 tensorboard-plugin-wit-1.7.0 tensorflow-2.3.1 tensorflow-estimator-2.3.0 termcolor-1.1.0</span><br></pre></td></tr></table></figure>
 <p>接著試試看能不能安裝Keras了。</p>
-<p><code>sudo pip install keras</code> 出現了warring，但是顯示了<code>Successfully installed keras-2.4.3</code>.</p>
+<p><code>sudo pip install keras</code> 出現了warning，但是顯示了<code>Successfully installed keras-2.4.3</code>.</p>
 <p>有Keras就一定會提到GPU，下次在教學服務器上配環境時可能需要。在此之前先擱置掉它。</p>
+<p>\newline</p>
 <h2 id="first-time-for-keras-and-nn"><a class="markdownIt-Anchor" href="#first-time-for-keras-and-nn"></a> First Time for Keras and NN</h2>
 <p>之前下載好了Conda和PyCharm，下面嘗試找一個CIFAR-10的項目照搬下來。</p>
+<p>嘗試這個“教程”： <a target="_blank" rel="noopener" href="https://towardsdatascience.com/deep-learning-with-cifar-10-image-classification-64ab92110d79">https://towardsdatascience.com/deep-learning-with-cifar-10-image-classification-64ab92110d79</a></p>
+<p>出現第一個問題：PyCharm上<code>import tensorflow</code> does not work.</p>
 
     </div>
 

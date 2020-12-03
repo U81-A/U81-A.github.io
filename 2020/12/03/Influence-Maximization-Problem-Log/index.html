@@ -30,7 +30,7 @@
 <meta property="og:description" content="前景提要 明天就是最後的DDL了 ❗️ 之前交上去的IMP版本完全無法正常運行，藉著寫報告的機會向自己好朋友請教了各種IMP有關的問題，先勉強把報告寫完了。 寫完之後第二天收到消息，老師允許遲交、最多能得到80%的分數。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-03T13:15:14.000Z">
-<meta property="article:modified_time" content="2020-12-03T13:32:54.253Z">
+<meta property="article:modified_time" content="2020-12-03T14:06:54.320Z">
 <meta property="article:author" content="Anne">
 <meta property="article:tag" content="研精覃思">
 <meta property="article:tag" content="Python">
@@ -194,7 +194,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-12-03 21:15:14 / Modified: 21:32:54" itemprop="dateCreated datePublished" datetime="2020-12-03T21:15:14+08:00">2020-12-03</time>
+              <time title="Created: 2020-12-03 21:15:14 / Modified: 22:06:54" itemprop="dateCreated datePublished" datetime="2020-12-03T21:15:14+08:00">2020-12-03</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -228,8 +228,19 @@
 <p>重新開了個python file開始寫代碼，苦於上一次被global variables折騰了許久都還不是很明白，於是這次選擇在函數之間大量傳參。雖然知道大圖情況下可能會出問題，但是先寫出可以運行的代碼再說。</p>
 <p>先找找python怎麼才能運行得更快。 <a target="_blank" rel="noopener" href="https://blog.csdn.net/u010159842/article/details/54573102">https://blog.csdn.net/u010159842/article/details/54573102</a> 在這篇文章裡講到不少坑，尤其是<code>while (1)</code> 比 <code>while (True)</code>要快這種，不看不知道。</p>
 <br/>
+<h5 id="閒言碎語"><a class="markdownIt-Anchor" href="#閒言碎語"></a> 閒言碎語</h5>
 <p>然後開始按著腦子裡的理解對著IMM那篇論文寫代碼。寫就對了⋯⋯ 我也不知道哪個邏輯是哪個。</p>
 <p>發現自己對python裡的字典太不了解了。嗯沒事，能找到tutorial。</p>
+<p>要記得自己的graph是比原訂的node點數多一個的，因為提供的data裡面node是從1開始算而不是0。</p>
+<p>python裡面沒有double嗎？python裡面只有float。</p>
+<p>最後還是考慮要用到python的全局變量了，關於引用和修改其實也算好理解。全局變量主要是節點個數和邊的個數，懶得傳來傳去的。</p>
+<p>看別人的 <code>NodeSelection(R,k)</code> 都返回的是兩個變量，開始好奇究竟是為什麼。anyway，先寫了再說。</p>
+<br/>
+<p>中途師兄來了一趟。</p>
+<p>今天的報告做得好糟糕喔。</p>
+<p>師兄說下週要請假回家一週，大概是看孩子吧。</p>
+<p>然後說我們實驗結果不行，圖感覺不真實，下週努力。</p>
+<br/>
 
     </div>
 
@@ -311,7 +322,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%8D%E6%99%AF%E6%8F%90%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text"> 前景提要</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%8D%E6%A7%8B%E4%BB%A3%E7%A2%BC"><span class="nav-number">2.</span> <span class="nav-text"> 重構代碼</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%8D%E6%99%AF%E6%8F%90%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text"> 前景提要</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%8D%E6%A7%8B%E4%BB%A3%E7%A2%BC"><span class="nav-number">2.</span> <span class="nav-text"> 重構代碼</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%96%92%E8%A8%80%E7%A2%8E%E8%AA%9E"><span class="nav-number">2.1.</span> <span class="nav-text"> 閒言碎語</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

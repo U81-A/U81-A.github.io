@@ -22,12 +22,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="前景提要 明天就是最後的DDL了 ❗️ 之前交上去的IMP版本完全無法正常運行，藉著寫報告的機會向自己好朋友請教了各種IMP有關的問題，先勉強把報告寫完了。 寫完之後第二天收到消息，老師允許遲交、最多能得到80%的分數。">
+  <meta name="description" content="前景提要 明天就是最後的DDL了 :heavy_exclamation_mark: 之前交上去的IMP版本完全無法正常運行，藉著寫報告的機會向自己好朋友請教了各種IMP有關的問題，先勉強把報告寫完了。 寫完之後第二天收到消息，老師允許遲交、最多能得到80%的分數。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Influence Maximization Problem Log">
 <meta property="og:url" content="http://example.com/2020/12/03/Influence-Maximization-Problem-Log/index.html">
 <meta property="og:site_name" content="U81&#39;s Blog">
-<meta property="og:description" content="前景提要 明天就是最後的DDL了 ❗️ 之前交上去的IMP版本完全無法正常運行，藉著寫報告的機會向自己好朋友請教了各種IMP有關的問題，先勉強把報告寫完了。 寫完之後第二天收到消息，老師允許遲交、最多能得到80%的分數。">
+<meta property="og:description" content="前景提要 明天就是最後的DDL了 :heavy_exclamation_mark: 之前交上去的IMP版本完全無法正常運行，藉著寫報告的機會向自己好朋友請教了各種IMP有關的問題，先勉強把報告寫完了。 寫完之後第二天收到消息，老師允許遲交、最多能得到80%的分數。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-03T13:15:14.000Z">
 <meta property="article:modified_time" content="2020-12-04T15:32:24.749Z">
@@ -223,18 +223,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="前景提要"><a class="markdownIt-Anchor" href="#前景提要"></a> 前景提要</h3>
-<p>明天就是最後的DDL了 ❗️</p>
+        <h3 id="前景提要">前景提要</h3>
+<p>明天就是最後的DDL了 :heavy_exclamation_mark:</p>
 <p>之前交上去的IMP版本完全無法正常運行，藉著寫報告的機會向自己好朋友請教了各種IMP有關的問題，先勉強把報告寫完了。</p>
 <p>寫完之後第二天收到消息，老師允許遲交、最多能得到80%的分數。</p>
 <a id="more"></a>
 <p>自然動手開始掙扎IMP。</p>
 <br/>
-<h3 id="重構代碼"><a class="markdownIt-Anchor" href="#重構代碼"></a> 重構代碼</h3>
+<h3 id="重構代碼">重構代碼</h3>
 <p>重新開了個python file開始寫代碼，苦於上一次被global variables折騰了許久都還不是很明白，於是這次選擇在函數之間大量傳參。雖然知道大圖情況下可能會出問題，但是先寫出可以運行的代碼再說。</p>
 <p>先找找python怎麼才能運行得更快。 <a target="_blank" rel="noopener" href="https://blog.csdn.net/u010159842/article/details/54573102">https://blog.csdn.net/u010159842/article/details/54573102</a> 在這篇文章裡講到不少坑，尤其是<code>while (1)</code> 比 <code>while (True)</code>要快這種，不看不知道。</p>
 <br/>
-<h4 id="閒言碎語"><a class="markdownIt-Anchor" href="#閒言碎語"></a> 閒言碎語</h4>
+<h4 id="閒言碎語">閒言碎語</h4>
 <p>然後開始按著腦子裡的理解對著IMM那篇論文寫代碼。寫就對了⋯⋯ 我也不知道哪個邏輯是哪個。</p>
 <p>發現自己對python裡的字典太不了解了。嗯沒事，能找到tutorial。</p>
 <p>要記得自己的graph是比原訂的node點數多一個的，因為提供的data裡面node是從1開始算而不是0。</p>
@@ -247,9 +247,9 @@
 <p>師兄說下週要請假回家一週，大概是看孩子吧。</p>
 <p>然後說我們實驗結果不行，圖感覺不真實，下週努力。</p>
 <br/>
-<h4 id="代碼實現中"><a class="markdownIt-Anchor" href="#代碼實現中"></a> 代碼實現中</h4>
-<h6 id="實現sampling"><a class="markdownIt-Anchor" href="#實現sampling"></a> 實現<code>sampling</code></h6>
-<p>發現<code>for i in range(1,4): print（i）</code> 的打印結果是<code>1,2,3,4</code>，也就是說<code>for i in range(1,1): print(i)</code> 是打不出結果的。</p>
+<h4 id="代碼實現中">代碼實現中</h4>
+<h6 id="實現sampling">實現<code>sampling</code></h6>
+<p>發現<code>for i in range(1,4): print（i）</code> 的打印結果是<code>1,2,3,4</code>，也就是說<code>for i in range(1,1):  print(i)</code> 是打不出結果的。</p>
 <p>多進程暫時不想，重構可以留到明天。今天先寫個能跑的。</p>
 <p>開始找python的<code>randint()</code>函數究竟是何方神聖：<code>randint(a,b)</code> 产生a,b范围内的整数，包含开头和结尾。</p>
 <p>果然無腦認真看論文還是有好處的。能看到推進的進度了。</p>
@@ -258,23 +258,23 @@
 <p>發現各種通過命令行傳進來的參數實際上都適合作為global variable。</p>
 <p>我發現我實在是很沒有耐心，讓我在一篇論文裡四處找equation and presentation我都會覺得枯燥，所以我適合自己幫自己做好準備工作、再開始coding。</p>
 <br/>
-<h6 id="實現node_selection"><a class="markdownIt-Anchor" href="#實現node_selection"></a> 實現<code>node_selection</code></h6>
+<h6 id="實現node-selection">實現<code>node_selection</code></h6>
 <p>開始寫node selection了。突然意識到為什麼node selection一般都是兩個參數了：不然有些本來自帶的性質還需要重新算一遍，雖然我也不知道是哪個性質、哪個函數。</p>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mi mathvariant="script">R</mi></msub><mo stretchy="false">(</mo><mi>S</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F_{\mathcal{R}}(S)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathcal mtight">R</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mclose">)</span></span></span></span> 到底是個什麼函數？ fraction又扮演了什麼角色？</p>
+<p>$F_{\mathcal{R}}(S)$ 到底是個什麼函數？ fraction又扮演了什麼角色？</p>
 <p>看別人的函數看懵了，node selection看偽代碼只有5行（加上initialize和return），所以到底都是去哪裡搞來這麼多行代碼的呢？</p>
 <br/>
-<h6 id="餘留問題"><a class="markdownIt-Anchor" href="#餘留問題"></a> 餘留問題</h6>
+<h6 id="餘留問題">餘留問題</h6>
 <p>node selection沒寫完</p>
-<p>聽說<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">R</mi></mrow><annotation encoding="application/x-tex">\mathcal{R}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord"><span class="mord mathcal">R</span></span></span></span></span>要紀錄產生反向可達集的節點是誰，真的要用字典嗎？</p>
+<p>聽說$\mathcal{R}$要紀錄產生反向可達集的節點是誰，真的要用字典嗎？</p>
 <p>那個關於fraction的函數怎麼寫呢？</p>
 <p>在哪裡開始寫ISE有關的部分呢？</p>
 <p>多線程怎麼寫呢？</p>
 <p>為什麼node selection有這麼多莫名其妙的代碼，而且我都不知道是在幹什麼？</p>
 <br/>
-<h4 id="猜想"><a class="markdownIt-Anchor" href="#猜想"></a> 猜想</h4>
+<h4 id="猜想">猜想</h4>
 <p>明天去對照一下兩位同學的代碼，看看node selection到底怎麼寫。</p>
 <br/>
-<h3 id="盤"><a class="markdownIt-Anchor" href="#盤"></a> 盤</h3>
+<h3 id="盤">盤</h3>
 <p>今天commit的comment是 “nothing, works out nothing”。</p>
 <p>好氣，但是其實還好。寫代碼的時候沒聽見暖手寶提示充滿電的聲音。</p>
 <p>然後今天的進度也還好，雖然感覺真正有效的時間沒有3個小時。以及找對了路徑之後感覺concentrate也沒有這麼折磨。</p>
@@ -364,7 +364,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E6%99%AF%E6%8F%90%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text"> 前景提要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E6%A7%8B%E4%BB%A3%E7%A2%BC"><span class="nav-number">2.</span> <span class="nav-text"> 重構代碼</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%96%92%E8%A8%80%E7%A2%8E%E8%AA%9E"><span class="nav-number">2.1.</span> <span class="nav-text"> 閒言碎語</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E7%A2%BC%E5%AF%A6%E7%8F%BE%E4%B8%AD"><span class="nav-number">2.2.</span> <span class="nav-text"> 代碼實現中</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%AF%A6%E7%8F%BEsampling"><span class="nav-number">2.2.0.1.</span> <span class="nav-text"> 實現sampling</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%AF%A6%E7%8F%BEnode_selection"><span class="nav-number">2.2.0.2.</span> <span class="nav-text"> 實現node_selection</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%A4%98%E7%95%99%E5%95%8F%E9%A1%8C"><span class="nav-number">2.2.0.3.</span> <span class="nav-text"> 餘留問題</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%8C%9C%E6%83%B3"><span class="nav-number">2.3.</span> <span class="nav-text"> 猜想</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%A4"><span class="nav-number">3.</span> <span class="nav-text"> 盤</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E6%99%AF%E6%8F%90%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">前景提要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E6%A7%8B%E4%BB%A3%E7%A2%BC"><span class="nav-number">2.</span> <span class="nav-text">重構代碼</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%96%92%E8%A8%80%E7%A2%8E%E8%AA%9E"><span class="nav-number">2.1.</span> <span class="nav-text">閒言碎語</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%A3%E7%A2%BC%E5%AF%A6%E7%8F%BE%E4%B8%AD"><span class="nav-number">2.2.</span> <span class="nav-text">代碼實現中</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%AF%A6%E7%8F%BEsampling"><span class="nav-number">2.2.0.1.</span> <span class="nav-text">實現sampling</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%AF%A6%E7%8F%BEnode-selection"><span class="nav-number">2.2.0.2.</span> <span class="nav-text">實現node_selection</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%A4%98%E7%95%99%E5%95%8F%E9%A1%8C"><span class="nav-number">2.2.0.3.</span> <span class="nav-text">餘留問題</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%8C%9C%E6%83%B3"><span class="nav-number">2.3.</span> <span class="nav-text">猜想</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%A4"><span class="nav-number">3.</span> <span class="nav-text">盤</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -380,7 +380,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

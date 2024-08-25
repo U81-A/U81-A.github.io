@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-flat-top.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Context 今天剛結束了OOAD的塔防遊戲答辯。 和隊友們熬了一個通宵，後半夜天亮前我頂不住，趴在旁邊的桌上睡了一小會兒。 上午馬馬虎虎睡了倆小時，起來吃了麵包便去機房準備PPT和答辯。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="滿身頑性嫌命長（十六）">
+<meta property="og:url" content="http://example.com/2020/12/24/%E6%BB%BF%E8%BA%AB%E9%A0%91%E6%80%A7%E5%AB%8C%E5%91%BD%E9%95%B7%EF%BC%88%E5%8D%81%E5%85%AD%EF%BC%89/index.html">
+<meta property="og:site_name" content="U81&#39;s Blog">
+<meta property="og:description" content="Context 今天剛結束了OOAD的塔防遊戲答辯。 和隊友們熬了一個通宵，後半夜天亮前我頂不住，趴在旁邊的桌上睡了一小會兒。 上午馬馬虎虎睡了倆小時，起來吃了麵包便去機房準備PPT和答辯。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-12-24T12:02:46.000Z">
+<meta property="article:modified_time" content="2020-12-26T06:01:36.000Z">
+<meta property="article:author" content="Anne">
+<meta property="article:tag" content="滿身頑性嫌命長">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2020/12/24/%E6%BB%BF%E8%BA%AB%E9%A0%91%E6%80%A7%E5%AB%8C%E5%91%BD%E9%95%B7%EF%BC%88%E5%8D%81%E5%85%AD%EF%BC%89/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>滿身頑性嫌命長（十六） | U81's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">U81's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">U81-A</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/24/%E6%BB%BF%E8%BA%AB%E9%A0%91%E6%80%A7%E5%AB%8C%E5%91%BD%E9%95%B7%EF%BC%88%E5%8D%81%E5%85%AD%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Anne">
+      <meta itemprop="description" content="Keep concentrate and healthy.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="U81's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          滿身頑性嫌命長（十六）
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-12-24 20:02:46" itemprop="dateCreated datePublished" datetime="2020-12-24T20:02:46+08:00">2020-12-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-12-26 14:01:36" itemprop="dateModified" datetime="2020-12-26T14:01:36+08:00">2020-12-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Journal/" itemprop="url" rel="index"><span itemprop="name">Journal</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.1k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h4 id="context"><a class="markdownIt-Anchor" href="#context"></a> Context</h4>
+<p>今天剛結束了OOAD的塔防遊戲答辯。</p>
+<p>和隊友們熬了一個通宵，後半夜天亮前我頂不住，趴在旁邊的桌上睡了一小會兒。</p>
+<p>上午馬馬虎虎睡了倆小時，起來吃了麵包便去機房準備PPT和答辯。</p>
+<span id="more"></span>
+<p>問隊友誰來做pre，隊友非常直截了當地說“我來”。</p>
+<p>平安渡過。</p>
+<p>老師問道有什麼和南科大有關的故事時，隊友笑咪咪地把我推到講台面前、讓我來講故事。</p>
+<p>但是熬了通宵，和隊友抱怨頭重腳輕、隊友和我抱怨通宵之後就算睡一覺起來也會心臟疼肝疼。可是似乎是沒什麼辦法的事情了。</p>
+<p>寫博客越發熟練，對自己來說是件好事情。</p>
+<p>之前在YouTube上看到ADHD youtuber 介紹 “body double”，深感有道理。有時候覺得自己其實並沒有ADHD的病理症狀或者說是日常生活受到的影響並不是很大，但不妨礙我從ADHD的角度去思考問題，比如“concentrate and productive”。</p>
+<br/>
+<h4 id="task"><a class="markdownIt-Anchor" href="#task"></a> Task</h4>
+<p>今晚主要目的還是複習，複習。列好的計畫沒有動、已經拖了好幾天了。今晚也不想熬夜，故還得抓緊時間。</p>
+<p>一邊玩著放置遊戲，一邊自己給自己出完形填空。完形填空總要比寫作文簡單。</p>
+<br/>
+<h4 id="assignment"><a class="markdownIt-Anchor" href="#assignment"></a> Assignment</h4>
+<p>而且還得寫一篇西方哲學導論但作業。</p>
+<p>事到如今，只得反覆感嘆多謝隊友對我的照顧和包容，或者說是朋友對我的寬容。（對，說的就是昨天半夜三點回學校路上過馬路把我摟過去的槐哥。）</p>
+<p>是最後一次作業了，這一次老師把作業的DDL延遲到了十點鐘，不過換句話說可能我趕在十點前寫完作業、然後下樓把烘乾的被套拿上來，就差不多了。今晚的複習計畫不如人意。</p>
+<p>話說回來，老師上次講了奧古斯丁和西方基督教，尤其講了奧古斯丁對“時間”的認知。有些打算從這個方面來講：比如把時間、《似是故人來》、有同學休學合在一起亂燉。</p>
+<p>在引擎上搜索奥古斯丁的时候我就在想，搜CS的内容用英文、搜哲学内容应该用德文。会不会在未来的某一个时间段，我有一个季度的时间无所事事、攻克了德语呢？话说回来，在看奥古斯丁的相关内容的时候的确看到一些德语引用。</p>
+<p>五百字似乎还行，开始思考什么时候泡脚。</p>
+<br/>
+<h4 id="chat"><a class="markdownIt-Anchor" href="#chat"></a> Chat</h4>
+<p>打算戴好口罩上床鋪床單。</p>
+<p>頭疼，很確信是因為受涼。還好昨天熬夜穿了秋褲，不然腳腕冷得疼，我第二天怕是會直接躺床上。</p>
+<br/>
+<h4 id="projects"><a class="markdownIt-Anchor" href="#projects"></a> Projects</h4>
+<p>好像今晚（今天聖誕節欸）要和隊友一起再去智園寫計網的RDT project。</p>
+<p>一起點了一芳的果茶，希望今天能寫完。</p>
+<p>和隊友之間朦朦朧朧，突然覺得高中老師講“最好的狀態就是朦朧美”，一方面是妥協於現實的感情問題，一方面是不希望高中學生再繼續深入發展感情。高中老師教我們把異性想得太惡劣。</p>
+<p>我是很惡劣，但我覺得高中比我惡劣的女孩子沒幾個。</p>
+<br/>
+<h4 id="lyrics"><a class="markdownIt-Anchor" href="#lyrics"></a> Lyrics</h4>
+<p>我自關山點酒，千秋皆入喉。</p>
+<p>幾載風雪卷刃，朔風同孤晝。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%BB%BF%E8%BA%AB%E9%A0%91%E6%80%A7%E5%AB%8C%E5%91%BD%E9%95%B7/" rel="tag"># 滿身頑性嫌命長</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/12/19/Prepare-for-Exam/" rel="prev" title="Prepare for Exam">
+      <i class="fa fa-chevron-left"></i> Prepare for Exam
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/02/17/%E6%BB%BF%E8%BA%AB%E9%A0%91%E6%80%A7%E5%AB%8C%E5%91%BD%E9%95%B7%EF%BC%88%E5%8D%81%E4%B9%9D%EF%BC%89/" rel="next" title="滿身頑性嫌命長（十九）">
+      滿身頑性嫌命長（十九） <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#context"><span class="nav-number">1.</span> <span class="nav-text"> Context</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#task"><span class="nav-number">2.</span> <span class="nav-text"> Task</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#assignment"><span class="nav-number">3.</span> <span class="nav-text"> Assignment</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#chat"><span class="nav-number">4.</span> <span class="nav-text"> Chat</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#projects"><span class="nav-number">5.</span> <span class="nav-text"> Projects</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lyrics"><span class="nav-number">6.</span> <span class="nav-text"> Lyrics</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Anne"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Anne</p>
+  <div class="site-description" itemprop="description">Keep concentrate and healthy.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div>
+  友情链接: 
+ <div>博客系： 
+  <a class="theme-link"  target="_blank" rel="noopener" href="http://1.15.152.254"> kxlv's Blog </a><span>&nbsp;&nbsp;</span>
+ </div>
+ 
+</div>
+
+<div class="copyright">
+  
+  &copy; 2020-11 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Anne</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">Symbols count total: </span>
+    <span title="Symbols count total">38k</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span> Times</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">UV <span id="busuanzi_value_site_uv"></span> Visitors</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_page_pv">Clicked <span id="busuanzi_value_page_pv"></span> Times</span>
+    <span class="post-meta-divider">|</span>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

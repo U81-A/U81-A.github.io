@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-flat-top.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="昨晚失眠。今早一覺起來，就知道Pintos寫不完。晚上一時想起所謂的恐懼與憤怒，抑鬱與麻木。種種前緣。 準備按照番茄🍅時鐘來嘗試一次，看看效率能否變高。Tomato Todo是早就下載在了手機上，今天進去一看，自習室要求綁定手機號，遂告別自習室。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pintos">
+<meta property="og:url" content="http://example.com/2021/04/04/Pintos/index.html">
+<meta property="og:site_name" content="U81&#39;s Blog">
+<meta property="og:description" content="昨晚失眠。今早一覺起來，就知道Pintos寫不完。晚上一時想起所謂的恐懼與憤怒，抑鬱與麻木。種種前緣。 準備按照番茄🍅時鐘來嘗試一次，看看效率能否變高。Tomato Todo是早就下載在了手機上，今天進去一看，自習室要求綁定手機號，遂告別自習室。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-04-04T02:27:06.000Z">
+<meta property="article:modified_time" content="2021-04-05T14:25:43.000Z">
+<meta property="article:author" content="Anne">
+<meta property="article:tag" content="Operating System">
+<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Dual Task">
+<meta property="article:tag" content="Pintos">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2021/04/04/Pintos/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Pintos | U81's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">U81's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">U81-A</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/04/Pintos/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Anne">
+      <meta itemprop="description" content="Keep concentrate and healthy.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="U81's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Pintos
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-04-04 10:27:06" itemprop="dateCreated datePublished" datetime="2021-04-04T10:27:06+08:00">2021-04-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-05 22:25:43" itemprop="dateModified" datetime="2021-04-05T22:25:43+08:00">2021-04-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Log/" itemprop="url" rel="index"><span itemprop="name">Log</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>2.5k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>昨晚失眠。今早一覺起來，就知道Pintos寫不完。晚上一時想起所謂的恐懼與憤怒，抑鬱與麻木。種種前緣。</p>
+<p>準備按照番茄🍅時鐘來嘗試一次，看看效率能否變高。Tomato Todo是早就下載在了手機上，今天進去一看，自習室要求綁定手機號，遂告別自習室。</p>
+<span id="more"></span>
+</br>
+<h4 id="the-1st-25min"><a class="markdownIt-Anchor" href="#the-1st-25min"></a> The 1st 25min</h4>
+<p>剪了指甲。Habitica的週期性提醒真的很有用。</p>
+<p>在斯坦福的官網上面有這麼一段：</p>
+<blockquote>
+<p>Before you read the description of this project, you should read all of the following sections: <a target="_blank" rel="noopener" href="http://web.stanford.edu/class/cs140/projects/pintos/pintos_1.html#SEC1">1. Introduction</a>, <a target="_blank" rel="noopener" href="http://web.stanford.edu/class/cs140/projects/pintos/pintos_8.html#SEC138">C. Coding Standards</a>, <a target="_blank" rel="noopener" href="http://web.stanford.edu/class/cs140/projects/pintos/pintos_10.html#SEC145">E. Debugging Tools</a>, and <a target="_blank" rel="noopener" href="http://web.stanford.edu/class/cs140/projects/pintos/pintos_11.html#SEC158">F. Development Tools</a>. You should at least skim the material from <a target="_blank" rel="noopener" href="http://web.stanford.edu/class/cs140/projects/pintos/pintos_6.html#SEC91">A.1 Loading</a> through <a target="_blank" rel="noopener" href="http://web.stanford.edu/class/cs140/projects/pintos/pintos_6.html#SEC111">A.5 Memory Allocation</a>, especially <a target="_blank" rel="noopener" href="http://web.stanford.edu/class/cs140/projects/pintos/pintos_6.html#SEC100">A.3 Synchronization</a>. To complete this project you will also need to read <a target="_blank" rel="noopener" href="http://web.stanford.edu/class/cs140/projects/pintos/pintos_7.html#SEC131">B. 4.4BSD Scheduler</a>.</p>
+</blockquote>
+<p>所以決定從這裡開始。只是存個檔，因為GDB還沒看懂——但是有不少文章說做這個project GDB很重要。</p>
+<p>想起來似乎應該在Ubuntu裡面裝一個VS Code。先把分辨率調整好了，然後調整了顯存和內存的大小，似乎變得順暢一點了。但是斯坦福的“Coding Standards”我還是沒有看懂。</p>
+</br>
+<h4 id="the-2nd-25min"><a class="markdownIt-Anchor" href="#the-2nd-25min"></a> The 2nd 25min</h4>
+<p>首先裝了VS code，也算是Dual Task了。按照VScode的教程來裝。下一步就是等待C/C++的擴展下載安裝、VScode建立文件樹。順便想辦法在Mac這邊也打開了同樣的內容（希望是一樣的，畢竟不知道<code>make</code>到底會對文件幹什麼）。也就是說瀏覽代碼確實需要在本機上，但是修改代碼在Ubuntu VM的VScode上面會快很多：因為VIM用不熟。考慮到可能有不少複製粘貼代碼的內容，於是決定在Ubuntu上下載一個QQ。</p>
+<p>在安裝的時候繼續看之前要求的前置信息，<a target="_blank" rel="noopener" href="http://web.stanford.edu/class/cs140/projects/pintos/pintos_6.html#SEC91">Loading</a>: It’s not important to understand exactly how the loader works. 覺得這個有必要於是存個檔。</p>
+<table>
+<thead>
+<tr>
+<th>Owner</th>
+<th>Contents</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>00000000</code>–<code>000003ff</code></td>
+<td>CPU</td>
+<td>Real mode interrupt table.</td>
+</tr>
+<tr>
+<td><code>00000400</code>–<code>000005ff</code></td>
+<td>BIOS</td>
+<td>Miscellaneous data area.</td>
+</tr>
+<tr>
+<td><code>00000600</code>–<code>00007bff</code></td>
+<td>–</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>00007c00</code>–<code>00007dff</code></td>
+<td>Pintos</td>
+<td>Loader.</td>
+</tr>
+<tr>
+<td><code>0000e000</code>–<code>0000efff</code></td>
+<td>Pintos</td>
+<td>Stack for loader; kernel stack and <code>struct thread</code> for initial kernel thread.</td>
+</tr>
+<tr>
+<td><code>0000f000</code>–<code>0000ffff</code></td>
+<td>Pintos</td>
+<td>Page directory for startup code.</td>
+</tr>
+<tr>
+<td><code>00010000</code>–<code>00020000</code></td>
+<td>Pintos</td>
+<td>Page tables for startup code.</td>
+</tr>
+<tr>
+<td><code>00020000</code>–<code>0009ffff</code></td>
+<td>Pintos</td>
+<td>Kernel code, data, and uninitialized data segments.</td>
+</tr>
+<tr>
+<td><code>000a0000</code>–<code>000bffff</code></td>
+<td>Video</td>
+<td>VGA display memory.</td>
+</tr>
+<tr>
+<td><code>000c0000</code>–<code>000effff</code></td>
+<td>Hardware</td>
+<td>Reserved for expansion card RAM and ROM.</td>
+</tr>
+<tr>
+<td><code>000f0000</code>–<code>000fffff</code></td>
+<td>BIOS</td>
+<td>ROM BIOS.</td>
+</tr>
+<tr>
+<td><code>00100000</code>–<code>03ffffff</code></td>
+<td>Pintos</td>
+<td>Dynamic memory allocation.</td>
+</tr>
+</tbody>
+</table>
+<p><code>thread.c</code>600 lines, <code>thread,h</code>150 lines. There’s hope 😛 .</p>
+<hr />
+<p>LUNCH</p>
+<p><s>and little nap</s></p>
+<hr />
+<p>其實我覺得我應該去睡一覺，但是沒有睡。而且也沒有打遊戲。但是效率並不怎麼高，同時還提醒自己不要隨便亂喝咖啡。前幾天一喝咖啡就心跳加速、這次來月經疼得厲害，無時無刻不在提醒我不要亂造。所以打算吃完晚飯再去睡一會兒，然後熬夜把代碼寫完。</p>
+<p>看不進去，打算洗頭。以及覺得不知道今晚幾點能睡。</p>
+<hr />
+<p>於是來到了第二天中午——我實在是個菜雞。</p>
+<p>抄了別人的bullet list如下：</p>
+<ul>
+<li>
+<p>重写<code>timer_sleep()</code>，避免busy waiting</p>
+</li>
+<li>
+<ul>
+<li><code>thread_mlfqs</code>为<code>false</code>时使用优先级调度，为<code>true</code>时使用多级反馈队列调度</li>
+</ul>
+</li>
+<li>
+<p>实现优先级调度</p>
+</li>
+<li>
+<ul>
+<li><code>schedule</code>应选择高优先级线程</li>
+<li>高优先级线程就绪时，应抢占</li>
+<li>锁、信号量、条件变量应优先唤醒高优先级线程</li>
+<li>当前线程降低自身优先级后，应yield</li>
+<li>需考虑优先级反转，实现优先级捐赠（仅对于锁）</li>
+<li>线程不会修改其它线程的优先级</li>
+</ul>
+</li>
+<li>
+<p>实现多级反馈队列</p>
+</li>
+<li>
+<ul>
+<li>此时优先级仅由公式决定，不受其它因素影响</li>
+<li>实现定点数运算</li>
+<li>实现优先级的更新</li>
+</ul>
+</li>
+</ul>
+</br>
+<p>然後開始copy代碼。</p>
+<p>開始給自己建立一個短暫的routine：關於如何從博客園看完全看不懂的思路、去GitHub上看完全找不到在哪裡的代碼、以及在自己卡成PPT的ubuntu VM上找到對應的代碼做修改這件事情：</p>
+<ol>
+<li>按照“代碼復現”部分確定一段需要修改的代碼。</li>
+<li>按照博文中的提示在clone到本地的倉庫裡（用VScode），通過全文搜索找到應該修改、添加的地方。</li>
+<li>通過上下文以及全文搜索在ubuntu VM裡找到自己的代碼沒修改的地方。</li>
+<li>對照macOS和ubuntu VM修改代碼。</li>
+<li>找到下一步需要修改的代碼，重複步驟一。</li>
+</ol>
+</br>
+<p>一直有一個大問題：不知道某一項任務要花多久。而這在計系似乎是大忌。</p>
+<p>被OS按在地上錘。</p>
+</br>
+<h4 id="第二天的第一次"><a class="markdownIt-Anchor" href="#第二天的第一次"></a> 第二天的第一次🍅⏰</h4>
+<p>總之就是先只給自己三個小時，然後看一看效果如何。這25分鐘就先看報告有些什麼要求、老師給的tutorial，以及預估自己寫報告要多久。在表示“不敢喝咖啡”之後，其實已經不知道碳酸飲料和檸檬茶到底誰對我更有效了。以及我覺得現在並沒有上學期期末那段時間那麼嚴重的焦慮，所以也實在沒打算考慮咖啡。</p>
+<p>嚴格來說知道report要寫什麼只花了9分鐘，但是確定要從哪裡去<em>copy</em>報告還是花了一點時間。然後還剩兩個半小時。</p>
+</br>
+<p>然後shutdown了⋯⋯</p>
+</br>
+<p>重啟中。</p>
+</br>
+<p>⋯⋯</p>
+</br>
+<p>縫縫補補。</p>
+<p>咖啡過期了，他媽的。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Operating-System/" rel="tag"># Operating System</a>
+              <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+              <a href="/tags/Dual-Task/" rel="tag"># Dual Task</a>
+              <a href="/tags/Pintos/" rel="tag"># Pintos</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/02/17/%E6%BB%BF%E8%BA%AB%E9%A0%91%E6%80%A7%E5%AB%8C%E5%91%BD%E9%95%B7%EF%BC%88%E5%8D%81%E4%B9%9D%EF%BC%89/" rel="prev" title="滿身頑性嫌命長（十九）">
+      <i class="fa fa-chevron-left"></i> 滿身頑性嫌命長（十九）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/04/22/After-Reinstall/" rel="next" title="After Reinstall">
+      After Reinstall <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#the-1st-25min"><span class="nav-number">1.</span> <span class="nav-text"> The 1st 25min</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#the-2nd-25min"><span class="nav-number">2.</span> <span class="nav-text"> The 2nd 25min</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E5%A4%A9%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AC%A1"><span class="nav-number">3.</span> <span class="nav-text"> 第二天的第一次🍅⏰</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Anne"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Anne</p>
+  <div class="site-description" itemprop="description">Keep concentrate and healthy.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div>
+  友情链接: 
+ <div>博客系： 
+  <a class="theme-link"  target="_blank" rel="noopener" href="http://1.15.152.254"> kxlv's Blog </a><span>&nbsp;&nbsp;</span>
+ </div>
+ 
+</div>
+
+<div class="copyright">
+  
+  &copy; 2020-11 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Anne</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">Symbols count total: </span>
+    <span title="Symbols count total">38k</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_pv">PV <span id="busuanzi_value_site_pv"></span> Times</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">UV <span id="busuanzi_value_site_uv"></span> Visitors</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_page_pv">Clicked <span id="busuanzi_value_page_pv"></span> Times</span>
+    <span class="post-meta-divider">|</span>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
